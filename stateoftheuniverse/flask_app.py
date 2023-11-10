@@ -31,7 +31,7 @@ def get_data():
     #    parser.add_argument('place', type=str)
     #    args = parser.parse_args()
 
-    geolocator = Nominatim()
+    geolocator = Nominatim(user_agent="StateOfTheUniverse")
     loc = geolocator.geocode("seattle")  # args.place)
     lat = loc.latitude
     lon = loc.longitude
@@ -63,4 +63,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',debug=True)
+    app.run(host='0.0.0.0',debug=True, port=8123)

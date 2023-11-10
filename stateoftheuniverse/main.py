@@ -24,7 +24,7 @@ def main():
     parser.add_argument('place', type=str)
     args = parser.parse_args()
 
-    geolocator = Nominatim()
+    geolocator = Nominatim(user_agent="StateOfTheUniverse")
     loc = geolocator.geocode(args.place)
     lat = loc.latitude
     lon = loc.longitude
